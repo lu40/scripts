@@ -1,0 +1,6 @@
+#!/bin/bash
+# Used as an option to open magnet links in firefox
+
+magnetLink=$@
+
+urxvt -e peerflix "$magnetLink" -v

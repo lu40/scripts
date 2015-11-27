@@ -1,0 +1,5 @@
+#!/bin/bash
+# Set spanish keyboard layout
+
+setxkbmap es &&
+notify-send -t 1000 -i /usr/share/icons/Numix-Circle/48x48/apps/aarddict.svg "Español"

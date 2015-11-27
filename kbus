@@ -1,0 +1,5 @@
+#!/bin/bash
+# Set english (US) keyboard layout
+
+setxkbmap us &&
+notify-send -t 1000 -i /usr/share/icons/Numix-Circle/48x48/apps/aarddict.svg "English (US)"

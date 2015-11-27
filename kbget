@@ -1,0 +1,12 @@
+#!/bin/bash
+# Show current keyboard layout in notification
+
+current=$(setxkbmap -query | grep layout)
+
+if [[ $current == *"us"* ]]; then
+	notify-send -t 1000 -i /usr/share/icons/Numix-Circle/48x48/apps/aarddict.svg "Current layout: English (US)"
+elif [[ $current == *"de"* ]]; then
+	notify-send -t 1000 -i /usr/share/icons/Numix-Circle/48x48/apps/aarddict.svg "Current layout: Deutsch"
+elif [[ $current == *"es"* ]]; then
+	notify-send -t 1000 -i /usr/share/icons/Numix-Circle/48x48/apps/aarddict.svg "Current layout: Español"
+fi

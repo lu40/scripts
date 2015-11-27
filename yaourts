@@ -1,0 +1,22 @@
+#!/bin/bash
+# Yaourts
+# Search for pacman packages in AUR
+# and display the results using less
+
+searchResults=/tmp/yaourts_search
+query=$@
+
+touch $searchResults
+
+# Use 'script' to preserve colored formatting
+script -qc "yaourt -Ss $query" $searchResults
+
+sed -i 1d $searchResults
+read results <<< $(wc -l < $searchResults)
+
+if [ $results != 0 ]; then
+  less -r $searchResults
+else
+  echo "Could not find any packages."
+  exit
+fi
